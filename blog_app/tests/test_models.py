@@ -1,5 +1,5 @@
 import pytest
-from blog_app.models import Post, Author, Comment
+from blog_app.models import Post, Author
 
 
 @pytest.mark.django_db

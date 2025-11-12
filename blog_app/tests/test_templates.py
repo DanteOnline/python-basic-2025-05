@@ -1,12 +1,17 @@
 import pytest
 from bs4 import BeautifulSoup
 from django.urls import reverse
-from blog_app.models import Post, Author
-
 
 
 @pytest.mark.django_db
-def test_post_list_template(client, author_1, author_2, post_1, post_2, post_3):
+def test_post_list_template(
+    client,
+    author_1,
+    author_2,
+    post_1,
+    post_2,
+    post_3
+    ):
     url = reverse('post_list')
     response = client.get(url)
     assert response.status_code == 200
@@ -17,7 +22,13 @@ def test_post_list_template(client, author_1, author_2, post_1, post_2, post_3):
 
 
 @pytest.mark.django_db
-def test_post_list_template_bs(client, author_1, author_2, post_1, post_2, post_3):
+def test_post_list_template_bs(
+    client,
+    author_1,
+    author_2,
+    post_1,
+    post_2, post_3
+    ):  # pylint:disable=too-many-positional-arguments
     url = reverse('post_list')
     response = client.get(url)
     assert response.status_code == 200

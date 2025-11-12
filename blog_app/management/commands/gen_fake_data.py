@@ -1,7 +1,7 @@
+import random
 from django.core.management.base import BaseCommand
 from faker import Faker
-from blog_app.models import Post, Author, Comment, Tag
-import random
+from blog_app.models import Post, Author, Comment
 
 
 class Command(BaseCommand):
@@ -48,6 +48,4 @@ class Command(BaseCommand):
             )
             comments.append(comment)
         self.stdout.write(f'Создали {len(comments)} комментариев')
-
-
         self.stdout.write('Генерация данных завершена')
