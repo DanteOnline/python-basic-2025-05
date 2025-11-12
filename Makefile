@@ -6,3 +6,6 @@ server:
 
 lint:
 	pylint $(git ls-files '*.py')
+
+coverage:
+	pytest -s --cov --cov-report html --cov-fail-under 86
